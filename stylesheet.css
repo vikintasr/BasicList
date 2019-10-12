@@ -1,0 +1,91 @@
+*, html, body {
+ margin: 0;
+ box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #348f50, #56b4d3);
+}
+
+input {
+    padding: 5px;
+    width: 100%;
+}
+
+input::placeholder {
+    color: rgba(200,200,200)
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+  
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+li {
+    list-style: none;
+    background: #6387ed;
+    width: 100%;
+    border-radius: 8px;
+    margin: 5px 0;
+    padding: 15px;
+    transition: .4s;
+    color: #fff;
+    cursor: pointer;
+}
+
+li:hover {
+    background: #5872be;
+}
+
+#addButton {
+    min-width: 70px;
+    cursor: pointer;
+}
+
+.mainArea {
+    text-align: center;
+    margin: 0 auto;
+    padding: 80px 30px;
+}
+
+.inputArea {
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.listArea {
+    margin-top: 15px;
+    width: 100%;
+    text-align: left;
+}
+
+.itemButton {
+    background: rgba(255,255,255, .2);
+    border: none;
+    float: right;
+    color: #fff;
+    min-width: 70px;
+    padding: 5px 0;
+    margin-top: -5px;
+    cursor: pointer;
+}
+
+.itemButton::after {
+    content: "Remove";
+}
+
+.remove {
+    display: none;
+}
+
+.secondaryArea {
+    border-radius: 6px;
+    padding: 20px;
+    background: #f7f7f7;
+}
