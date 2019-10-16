@@ -1,50 +1,46 @@
-var input = document.getElementById("inputText");
-var button = document.getElementById("addButton");
-var ul = document.querySelector("ul");
-var subHeading = document.getElementById("list");
+let input = document.getElementById("inputText");
+let button = document.getElementById("addButton");
+let ul = document.querySelector("ul");
+let subHeading = document.getElementById("list");
 
 
-function getLength() {
+const getLength = () => {
     return input.value.length;
 }
 
+const createNewItem = () => {
 
-function createNewItem() {
-
-    var newDivElement = document.createElement("div");
-    var newLiElement = document.createElement("li");
+    let newDivElement = document.createElement("div");
+    let newLiElement = document.createElement("li");
     newLiElement.appendChild(document.createTextNode(input.value));
     ul.appendChild(newLiElement);
-    newLiElement.addEventListener("click", function(){
-        this.classList.toggle("done");
+    newLiElement.addEventListener("click", () => {
+        newLiElement.classList.toggle("done");
     });
 
     if (newLiElement) {
         subHeading.style.display = "none";
-        var removeButton = document.createElement("button");
+        let removeButton = document.createElement("button");
         newLiElement.insertAdjacentElement("beforeend", removeButton);
         removeButton.classList.add("itemButton");
-        removeButton.addEventListener("click", function(){
+        removeButton.addEventListener("click", () => {
             newLiElement.classList.add("remove");
         })
     } 
-    input.value = "";
-    
+    input.value = "";   
 }
 
-function onClick() {
+const onClick = () => {
     if (getLength() > 0) {
         createNewItem();
     }
 };
 
-function onKeypress(event) {
+const onKeypress = (event) => {
     if (getLength() > 0 && event.keyCode === 13) {
         createNewItem();
     }
 }
-
-  
-
+ 
 button.addEventListener("click", onClick);
 input.addEventListener("keypress", onKeypress);
