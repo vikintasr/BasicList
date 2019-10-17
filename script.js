@@ -10,7 +10,6 @@ const getLength = () => {
 
 const createNewItem = () => {
 
-    let newDivElement = document.createElement("div");
     let newLiElement = document.createElement("li");
     newLiElement.appendChild(document.createTextNode(input.value));
     ul.appendChild(newLiElement);
